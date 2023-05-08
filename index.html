@@ -9,88 +9,98 @@
             sizes="32x32"
             href="./images/favicon-32x32.png"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/main.css" />
         <title>Frontend Mentor | Interactive card details form</title>
     </head>
     <body>
         <main>
             <div class="container">
-                <div class="background-img">
-                    <div class="card">
-                        <div class="card__front">
-                            <img
-                                src="./images/bg-card-front.png"
-                                alt="The front side of a credit card"
-                            />
-                            <img src="./images/card-logo.svg" alt="" />
-                            <span class="card__number"
-                                >0000 0000 0000 0000</span
-                            >
-                            <span class="card__name">jane appleseed</span>
-                            <span class="card__exp-date">00/00</span>
-                        </div>
-                        <div class="card__back">
-                            <img
-                                src="./images/bg-card-back.png"
-                                alt="The back side of a credit card"
-                            />
-                            <span class="card__cvc">000</span>
-                        </div>
+                <div class="card">
+                    <div class="card__front">
+                        <img
+                            src="./images/bg-card-front.png"
+                            alt="The front side of a credit card"
+                        />
+                        <img src="./images/card-logo.svg" alt="" class="card__logo"/>
+                        <span class="card__number">0000 0000 0000 0000</span>
+                        <span class="card__name">jane appleseed</span>
+                        <span class="card__exp-date">00/00</span>
                     </div>
-                    <form id="form" class="form">
-                        <fieldset>
-                            <legend>
-                                Please fill the form to update your card details
-                            </legend>
-                            <div class="form__group">
-                                <label for="name">cardholder name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="Card Name"
-                                    class="form__input"
-                                    placeholder="e.g. Jane Appleseed"
-                                />
-                            </div>
-                            <div class="form__group">
-                                <label for="card-number">card number</label>
-                                <input
-                                    type="number"
-                                    id="card-number"
-                                    name="Card Number"
-                                    class="form__input"
-                                    placeholder="e.g. 1234 5678 9123 0000"
-                                />
-                            </div>
-                            <div class="form__group">
-                                <fieldset>
-                                    <legend>exp. date (mm/yy)</legend>
-                                    <input
-                                        type="number"
-                                        name="month"
-                                        class="form__input"
-                                        placeholder="mm"
-                                    />
-                                    <input
-                                        type="number"
-                                        name="year"
-                                        class="form__input"
-                                        placeholder="yy"
-                                    />
-                                </fieldset>
-                            </div>
-                            <div class="form__group">
-                                <label for="cvc">cvc</label>
-                                <input
-                                    type="number"
-                                    id="cvc"
-                                    name="Card CVC"
-                                    placeholder="e.g. 123"
-                                />
-                            </div>
-                            <button type="submit" class="form__btn">Confirm</button>
-                        </fieldset>
-                    </form>
+                    <div class="card__back">
+                        <img
+                            src="./images/bg-card-back.png"
+                            alt="The back side of a credit card"
+                        />
+                        <span class="card__cvc">000</span>
+                    </div>
                 </div>
+                <form id="form" class="form">
+                    <fieldset>
+                        <legend class="visually-hidden">
+                            Please fill the form to update your card details
+                        </legend>
+                        <div class="form__group">
+                            <label for="name" class="form__label">cardholder name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="Card Name"
+                                class="form__input"
+                                placeholder="e.g. Jane Appleseed"
+                            />
+                            <p class="form__error"></p>
+                        </div>
+                        <div class="form__group">
+                            <label for="card-number" class="form__label">card number</label>
+                            <input
+                                type="number"
+                                id="card-number"
+                                name="Card Number"
+                                class="form__input"
+                                placeholder="e.g. 1234 5678 9123 0000"
+                            />
+                            <p class="form__error"></p>
+                        </div>
+                        <div class="form__flex">
+                            <div class="form__group">
+                            <fieldset>
+                                <legend class="form__label">exp. date (mm/yy)</legend>
+                                <input
+                                    type="number"
+                                    name="month"
+                                    class="form__input small"
+                                    placeholder="mm"
+                                />
+                                <input
+                                    type="number"
+                                    name="year"
+                                    class="form__input small"
+                                    placeholder="yy"
+                                />
+                            </fieldset>
+                            <p class="form__error"></p>
+                        </div>
+                        <div class="form__group">
+                            <label for="cvc" class="form__label">cvc</label>
+                            <input
+                                type="number"
+                                id="cvc"
+                                name="Card CVC"
+                                placeholder="e.g. 123"
+                                class="form__input form__input-cvc"
+                            />
+                            <p class="form__error"></p>
+                        </div>
+                        </div>
+                        <button type="submit" class="form__btn">Confirm</button>
+                    </fieldset>
+                </form>
             </div>
         </main>
     </body>

@@ -1,1 +1,187 @@
 @import "config";
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 30%;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .card {
+        position: relative;
+
+        &__front {
+            position: relative;
+            left: -8.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__back {
+            position: relative;
+            left: -4rem;
+        }
+
+        &__logo,
+        &__number,
+        &__name,
+        &__exp-date,
+        &__cvc {
+            position: absolute;
+            color: $light-grayish-violet;
+        }
+
+        &__logo,
+        &__number,
+        &__name {
+            left: 2rem;
+        }
+
+        &__name,
+        &__exp-date,
+        &__cvc {
+            letter-spacing: 0.1rem;
+            font-size: 0.8rem;
+        }
+
+        &__name,
+        &__exp-date {
+            bottom: 1.5rem;
+        }
+
+        &__logo {
+            top: 1.5rem;
+        }
+
+        &__number {
+            bottom: 4rem;
+            letter-spacing: 0.2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        &__name {
+            text-transform: uppercase;
+        }
+
+        &__exp-date {
+            right: 4.5rem;
+        }
+
+        &__cvc {
+            top: 6.2rem;
+            right: 3rem;
+        }
+    }
+
+    .form {
+        fieldset {
+            border: none;
+        }
+
+        .visually-hidden {
+            height: 1px;
+            overflow: hidden;
+            width: 1px;
+            position: absolute;
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+
+        &__group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+
+        &__label {
+            text-transform: uppercase;
+            color: $very-dark-violet;
+            font-size: 0.83rem;
+            letter-spacing: 0.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        &__input {
+            width: 25rem;
+            padding: 0.6rem 0.5rem;
+            border: 1px solid $light-grayish-violet;
+            border-radius: 0.4rem;
+            font-size: 1rem;
+            font-family: "Space Grotesk", sans-serif;
+
+            &-cvc {
+                width: inherit;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &:focus,
+            &:active {
+                outline: none;
+                border: 1px solid $very-dark-violet;
+            }
+        }
+
+        .small {
+            width: 5rem;
+            margin-right: 0.5rem;
+        }
+
+        &__flex {
+            display: flex;
+        }
+
+        &__error {
+            font-size: 0.7rem;
+            color: $input-errors;
+            margin-top: 0.2rem;
+        }
+
+        .error {
+            border: 1px solid $input-errors;
+        }
+
+        &__btn {
+            width: 100%;
+            padding: 0.6rem;
+            border: none;
+            background-color: $very-dark-violet;
+            color: $light-grayish-violet;
+            font: inherit;
+            border-radius: 0.4rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                opacity: 80%;
+            }
+        }
+    }
+}
