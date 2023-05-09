@@ -7,9 +7,9 @@ body {
     align-items: center;
     background: url(../images/bg-main-desktop.png);
     background-repeat: no-repeat;
-    background-size: 30%;
+    background-size: 30% 100vh;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main {
@@ -181,6 +181,157 @@ main {
 
             &:hover {
                 opacity: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .container {
+        gap: 3rem;
+        overflow: hidden !important;
+
+        .card {
+            &__front {
+                left: -3.5rem;
+                &-img {
+                    width: 90%;
+                }
+            }
+
+            &__logo,
+            &__number,
+            &__name {
+                left: 1rem;
+            }
+
+            &__back {
+                left: 1rem;
+
+                &-img {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        background: url(../images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: 100vw 35%;
+    }
+
+    .container {
+        flex-direction: column;
+
+        .card {
+            // width: 100%;
+
+            &__front {
+                top: 8.1rem;
+                left: -5rem;
+                z-index: 3;
+            }
+
+            &__back {
+                top: -13rem;
+                right: -5rem;
+                z-index: 2;
+            }
+
+            &__cvc {
+                top: 5.7rem;
+                right: 5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 678px) {
+    body {
+        background-size: 100vw 30%;
+    }
+    .container {
+
+
+        .card {
+            &__front {
+                top: 6.8rem;
+                right: 0;
+                left: 0;
+                text-align: center;
+
+                &-img {
+                    width: 70%;
+                }
+            }
+
+            &__back {
+                top: -10rem;
+                text-align: center;
+                right: 0;
+                left: 2.5rem;
+
+                &-img {
+                    width: 70%;
+                }
+            }
+
+            &__logo,
+            &__number,
+            &__name {
+                left: 5rem;
+            }
+
+            &__logo {
+                width: 3rem;
+            }
+
+            &__number {
+                font-size: 0.8rem;
+            }
+
+            &__name,
+            &__exp-date {
+                font-size: 0.7rem;
+            }
+
+            &__cvc {
+                top: 4.2rem;
+                right: 6rem;
+            }
+
+            &__exp-date {
+                right: 7rem;
+            }
+        }
+
+        .form {
+            &__input {
+                width: auto;
+                font-size: 0.8rem;
+            }
+
+            .small {
+                width: 3rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        .card {
+            width: 100%;
+
+            &__back {
+                left: 0;
+            }
+
+            &__front {
+                left: -2rem;
             }
         }
     }

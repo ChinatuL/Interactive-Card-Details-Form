@@ -26,8 +26,13 @@
                         <img
                             src="./images/bg-card-front.png"
                             alt="The front side of a credit card"
+                            class="card__front-img"
                         />
-                        <img src="./images/card-logo.svg" alt="" class="card__logo"/>
+                        <img
+                            src="./images/card-logo.svg"
+                            alt=""
+                            class="card__logo"
+                        />
                         <span class="card__number">0000 0000 0000 0000</span>
                         <span class="card__name">jane appleseed</span>
                         <span class="card__exp-date">00/00</span>
@@ -36,6 +41,7 @@
                         <img
                             src="./images/bg-card-back.png"
                             alt="The back side of a credit card"
+                            class="card__back-img"
                         />
                         <span class="card__cvc">000</span>
                     </div>
@@ -46,7 +52,9 @@
                             Please fill the form to update your card details
                         </legend>
                         <div class="form__group">
-                            <label for="name" class="form__label">cardholder name</label>
+                            <label for="name" class="form__label"
+                                >cardholder name</label
+                            >
                             <input
                                 type="text"
                                 id="name"
@@ -57,7 +65,9 @@
                             <p class="form__error"></p>
                         </div>
                         <div class="form__group">
-                            <label for="card-number" class="form__label">card number</label>
+                            <label for="card-number" class="form__label"
+                                >card number</label
+                            >
                             <input
                                 type="number"
                                 id="card-number"
@@ -69,34 +79,36 @@
                         </div>
                         <div class="form__flex">
                             <div class="form__group">
-                            <fieldset>
-                                <legend class="form__label">exp. date (mm/yy)</legend>
+                                <fieldset>
+                                    <legend class="form__label">
+                                        exp. date (mm/yy)
+                                    </legend>
+                                    <input
+                                        type="number"
+                                        name="month"
+                                        class="form__input small"
+                                        placeholder="mm"
+                                    />
+                                    <input
+                                        type="number"
+                                        name="year"
+                                        class="form__input small"
+                                        placeholder="yy"
+                                    />
+                                </fieldset>
+                                <p class="form__error"></p>
+                            </div>
+                            <div class="form__group">
+                                <label for="cvc" class="form__label">cvc</label>
                                 <input
                                     type="number"
-                                    name="month"
-                                    class="form__input small"
-                                    placeholder="mm"
+                                    id="cvc"
+                                    name="Card CVC"
+                                    placeholder="e.g. 123"
+                                    class="form__input form__input-cvc"
                                 />
-                                <input
-                                    type="number"
-                                    name="year"
-                                    class="form__input small"
-                                    placeholder="yy"
-                                />
-                            </fieldset>
-                            <p class="form__error"></p>
-                        </div>
-                        <div class="form__group">
-                            <label for="cvc" class="form__label">cvc</label>
-                            <input
-                                type="number"
-                                id="cvc"
-                                name="Card CVC"
-                                placeholder="e.g. 123"
-                                class="form__input form__input-cvc"
-                            />
-                            <p class="form__error"></p>
-                        </div>
+                                <p class="form__error"></p>
+                            </div>
                         </div>
                         <button type="submit" class="form__btn">Confirm</button>
                     </fieldset>
