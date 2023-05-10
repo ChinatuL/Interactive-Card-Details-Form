@@ -10,6 +10,13 @@
   box-sizing: border-box;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -135,6 +142,7 @@ main {
   display: flex;
 }
 .container .form__error {
+  display: none;
   font-size: 0.7rem;
   color: hsl(0, 100%, 66%);
   margin-top: 0.2rem;

@@ -158,6 +158,7 @@ main {
         }
 
         &__error {
+            display: none;
             font-size: 0.7rem;
             color: $input-errors;
             margin-top: 0.2rem;
@@ -254,8 +255,6 @@ main {
         background-size: 100vw 30%;
     }
     .container {
-
-
         .card {
             &__front {
                 top: 6.8rem;

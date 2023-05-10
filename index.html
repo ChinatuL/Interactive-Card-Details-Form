@@ -35,7 +35,12 @@
                         />
                         <span class="card__number">0000 0000 0000 0000</span>
                         <span class="card__name">jane appleseed</span>
-                        <span class="card__exp-date">00/00</span>
+                        <div class="card__exp-date">
+                            <span class="card__exp-month">00</span>/<span
+                                class="card__exp-year"
+                                >00</span
+                            >
+                        </div>
                     </div>
                     <div class="card__back">
                         <img
@@ -61,8 +66,10 @@
                                 name="Card Name"
                                 class="form__input"
                                 placeholder="e.g. Jane Appleseed"
+                                aria-required="true"
+                                aria-invalid="false"
                             />
-                            <p class="form__error"></p>
+                            <p class="form__error" id="name-error"></p>
                         </div>
                         <div class="form__group">
                             <label for="card-number" class="form__label"
@@ -74,8 +81,12 @@
                                 name="Card Number"
                                 class="form__input"
                                 placeholder="e.g. 1234 5678 9123 0000"
+                                aria-required="true"
+                                aria-invalid="false"
+                                pattern=""
+                                onKeyPress="if(this.value.length==16) return false;"
                             />
-                            <p class="form__error"></p>
+                            <p class="form__error" id="number-error"></p>
                         </div>
                         <div class="form__flex">
                             <div class="form__group">
@@ -88,15 +99,21 @@
                                         name="month"
                                         class="form__input small"
                                         placeholder="mm"
+                                        id="month"
+                                        aria-required="true"
+                                        aria-invalid="false"
                                     />
                                     <input
                                         type="number"
                                         name="year"
                                         class="form__input small"
                                         placeholder="yy"
+                                        id="year"
+                                        aria-required="true"
+                                        aria-invalid="false"
                                     />
+                                    <p class="form__error" id="date-error"></p>
                                 </fieldset>
-                                <p class="form__error"></p>
                             </div>
                             <div class="form__group">
                                 <label for="cvc" class="form__label">cvc</label>
@@ -106,8 +123,11 @@
                                     name="Card CVC"
                                     placeholder="e.g. 123"
                                     class="form__input form__input-cvc"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    onKeyPress="if(this.value.length==3) return false;"
                                 />
-                                <p class="form__error"></p>
+                                <p class="form__error" id="cvc-error"></p>
                             </div>
                         </div>
                         <button type="submit" class="form__btn">Confirm</button>
@@ -115,5 +135,6 @@
                 </form>
             </div>
         </main>
+        <script src="./js/script.js"></script>
     </body>
 </html>
