@@ -44,6 +44,17 @@ main {
   width: 100%;
   height: 100%;
 }
+.container .visually-hidden {
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
 .container .card {
   position: relative;
 }
@@ -92,17 +103,6 @@ main {
 .container .form fieldset {
   border: none;
 }
-.container .form .visually-hidden {
-  height: 1px;
-  overflow: hidden;
-  width: 1px;
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  white-space: nowrap;
-}
 .container .form__group {
   display: flex;
   flex-direction: column;
@@ -150,7 +150,7 @@ main {
 .container .form .error {
   border: 1px solid hsl(0, 100%, 66%);
 }
-.container .form__btn {
+.container .form__btn, .container .complete__btn {
   width: 100%;
   padding: 0.6rem;
   border: none;
@@ -162,10 +162,27 @@ main {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.container .form__btn:hover {
+.container .form__btn:hover, .container .complete__btn:hover {
   opacity: 80%;
 }
-
+.container .complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.container .complete__title {
+  margin: 1.8rem 0 0.8rem;
+  color: hsl(278, 68%, 11%);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.container .complete__description {
+  margin-bottom: 1.8rem;
+  color: hsl(279, 6%, 55%);
+}
 @media (max-width: 1300px) {
   .container {
     gap: 3rem;

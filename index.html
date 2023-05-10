@@ -21,6 +21,7 @@
     <body>
         <main>
             <div class="container">
+                <h1 class="visually-hidden">Card Details Form</h1>
                 <div class="card">
                     <div class="card__front">
                         <img
@@ -51,7 +52,7 @@
                         <span class="card__cvc">000</span>
                     </div>
                 </div>
-                <form id="form" class="form">
+                <form id="form" class="form" action="#complete">
                     <fieldset>
                         <legend class="visually-hidden">
                             Please fill the form to update your card details
@@ -133,6 +134,18 @@
                         <button type="submit" class="form__btn">Confirm</button>
                     </fieldset>
                 </form>
+                <div class="complete" id="complete">
+                    <div class="complete__icon">
+                        <img src="./images/icon-complete.svg" alt="" />
+                    </div>
+                    <h2 class="complete__title">Thank you!</h2>
+                    <p class="complete__description">
+                        We've added your card details
+                    </p>
+                    <button type="reset" class="complete__btn" id="complete-btn">
+                        Continue
+                    </button>
+                </div>
             </div>
         </main>
         <script src="./js/script.js"></script>

@@ -1,10 +1,25 @@
+// select form
 const form = document.getElementById("form");
+
+// select the complete section and reset button
+const completeMessage = document.getElementById("complete");
+const resetBtn = document.getElementById("complete-btn");
+
+// select form inputs
 const inputName = document.getElementById("name");
 const inputNumber = document.getElementById("card-number");
 const inputMonth = document.getElementById("month");
 const inputYear = document.getElementById("year");
 const inputCvc = document.getElementById("cvc");
 
+// select card details
+const cardNumber = document.querySelector(".card__number");
+const cardName = document.querySelector(".card__name");
+const cardMonth = document.querySelector(".card__exp-month");
+const cardYear = document.querySelector(".card__exp-year");
+const cardCvc = document.querySelector(".card__cvc");
+
+// checks if input is required
 const isRequired = (value) => {
     if (value.trim() === "") {
         return false;
@@ -13,6 +28,7 @@ const isRequired = (value) => {
     }
 };
 
+// shows error messages
 const showError = (input, errorMessage) => {
     input.classList.add("error");
     input.setAttribute("aria-invalid", true);
@@ -21,6 +37,7 @@ const showError = (input, errorMessage) => {
     error.style.display = "block";
 };
 
+// hides error messages
 const showSuccess = (input) => {
     input.classList.remove("error");
     input.setAttribute("aria-invalid", false);
@@ -29,6 +46,7 @@ const showSuccess = (input) => {
     error.style.display = "none";
 };
 
+// validates card name
 const validateName = () => {
     const nameValue = inputName.value;
     if (!isRequired(nameValue)) {
@@ -40,6 +58,7 @@ const validateName = () => {
     }
 };
 
+// validates card number
 const validateNumber = () => {
     const numberValue = inputNumber.value;
     if (!isRequired(numberValue)) {
@@ -52,6 +71,7 @@ const validateNumber = () => {
     }
 };
 
+// validates card expiry date
 const validateDate = () => {
     const monthValue = inputMonth.value;
     const yearValue = inputYear.value;
@@ -76,6 +96,7 @@ const validateDate = () => {
     }
 };
 
+// validates card cvc
 const validateCvc = () => {
     const cvcValue = inputCvc.value;
     if (!isRequired(cvcValue)) {
@@ -90,42 +111,67 @@ const validateCvc = () => {
     }
 };
 
+// submit event listener for the form
 form.addEventListener("submit", (e) => {
+    e.preventDefault();
     const isNameValid = validateName();
     const isNumberValid = validateNumber();
     const isDateValid = validateDate();
     const isCvcValid = validateCvc();
     if (isNameValid && isNumberValid && isDateValid && isCvcValid) {
-        return true;
+        form.style.display = "none";
+        completeMessage.style.display = "flex";
     } else {
-        e.preventDefault();
         return false;
     }
 });
 
+// updates card number
 inputNumber.addEventListener("keyup", () => {
-    const cardNumber = document.querySelector(".card__number");
     cardNumber.textContent = inputNumber.value
         .trim()
         .replace(/(\d{4})/g, "$1 ");
 });
 
+// updates card name
 inputName.addEventListener("keyup", () => {
-    const cardName = document.querySelector(".card__name");
     cardName.textContent = inputName.value;
 });
 
+// updates card month
 inputMonth.addEventListener("keyup", () => {
-    const cardMonth = document.querySelector(".card__exp-month");
     cardMonth.textContent = inputMonth.value;
 });
 
+// updates card year
 inputYear.addEventListener("keyup", () => {
-    const cardYear = document.querySelector(".card__exp-year");
     cardYear.textContent = inputYear.value;
 });
 
+// updates card cvc
 inputCvc.addEventListener("keyup", () => {
-    const cardCvc = document.querySelector(".card__cvc");
     cardCvc.textContent = inputCvc.value;
+});
+
+const resetForm = () => {
+    // clears form fields
+    inputName.value = "";
+    inputNumber.value = "";
+    inputMonth.value = "";
+    inputYear.value = "";
+    inputCvc.value = "";
+
+    // resets card details to default state
+    cardName.textContent = "Jane Appleseed";
+    cardNumber.textContent = "0000 0000 0000 0000";
+    cardMonth.textContent = "00";
+    cardYear.textContent = "00";
+    cardCvc.textContent = "000";
+};
+
+// event listener to reset the form and card
+resetBtn.addEventListener("click", () => {
+    form.style.display = "block";
+    completeMessage.style.display = "none";
+    resetForm();
 });
