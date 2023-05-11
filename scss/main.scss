@@ -1,37 +1,30 @@
 @import "config";
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexCentre(column);
+    width: 100vw;
+    min-height: 100vh;
     background: url(../images/bg-main-desktop.png);
     background-repeat: no-repeat;
     background-size: 30% 100vh;
-    width: 100vw;
-    min-height: 100vh;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCentre(row);
     width: 100%;
     height: 100%;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCentre(row);
     width: 100%;
     height: 100%;
 
     .visually-hidden {
+        position: absolute;
+        width: 1px;
         height: 1px;
         overflow: hidden;
-        width: 1px;
-        position: absolute;
         clip: rect(1px 1px 1px 1px);
         clip: rect(1px, 1px, 1px, 1px);
         clip-path: inset(50%);
@@ -70,8 +63,8 @@ main {
         &__name,
         &__exp-date,
         &__cvc {
-            letter-spacing: 0.1rem;
             font-size: 0.8rem;
+            letter-spacing: 0.1rem;
         }
 
         &__name,
@@ -85,9 +78,9 @@ main {
 
         &__number {
             bottom: 4rem;
-            letter-spacing: 0.2rem;
             font-size: 1.5rem;
             text-align: center;
+            letter-spacing: 0.2rem;
         }
 
         &__name {
@@ -116,18 +109,18 @@ main {
         }
 
         &__label {
-            text-transform: uppercase;
+            margin-bottom: 0.3rem;
             color: $very-dark-violet;
             font-size: 0.83rem;
+            text-transform: uppercase;
             letter-spacing: 0.1rem;
-            margin-bottom: 0.3rem;
         }
 
         &__input {
-            width: 25rem;
-            padding: 0.6rem 0.5rem;
             border: 1px solid $light-grayish-violet;
             border-radius: 0.4rem;
+            width: 25rem;
+            padding: 0.6rem 0.5rem;
             font-size: 1rem;
             font-family: "Space Grotesk", sans-serif;
 
@@ -159,9 +152,9 @@ main {
 
         &__error {
             display: none;
-            font-size: 0.7rem;
-            color: $input-errors;
             margin-top: 0.2rem;
+            color: $input-errors;
+            font-size: 0.7rem;
         }
 
         .error {
@@ -169,14 +162,14 @@ main {
         }
 
         &__btn {
-            width: 100%;
-            padding: 0.6rem;
             border: none;
+            border-radius: 0.4rem;
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.6rem;
             background-color: $very-dark-violet;
             color: $light-grayish-violet;
             font: inherit;
-            border-radius: 0.4rem;
-            margin-top: 0.5rem;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
 
@@ -187,10 +180,7 @@ main {
     }
 
     .complete {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexCentre(column);
         display: none;
 
         &__title {
@@ -207,7 +197,7 @@ main {
         }
 
         &__btn {
-            @extend .form__btn
+            @extend .form__btn;
         }
     }
 }
@@ -253,8 +243,6 @@ main {
         flex-direction: column;
 
         .card {
-            // width: 100%;
-
             &__front {
                 top: 8.1rem;
                 left: -5rem;
@@ -294,9 +282,9 @@ main {
 
             &__back {
                 top: -10rem;
-                text-align: center;
                 right: 0;
                 left: 2.5rem;
+                text-align: center;
 
                 &-img {
                     width: 70%;
